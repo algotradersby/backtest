@@ -357,26 +357,26 @@ footer{border-top:2px solid var(--border);padding:28px 56px;max-width:1200px;mar
     <p class="section-sub">Nilai pips identik untuk Fix Lot &amp; Risk 1% — tidak dipengaruhi lot size</p>
   </div>
 
-  <div class="compare-wrap" style="margin-bottom:18px;">
-    <div class="chart-wrap">
+
+    <div class="chart-wrap" style="margin-bottom:18px;">
       <div class="chart-label">Pips per bulan (2019–2026)</div>
       <div class="chart-canvas-wrap"><canvas id="cMonthPips" height="210"></canvas></div>
     </div>
-    <div class="chart-wrap">
+    <div class="chart-wrap" style="margin-bottom:18px;">
       <div class="chart-label">Drawdown equity pips per bulan</div>
       <div class="chart-canvas-wrap"><canvas id="cMonthDD" height="210"></canvas></div>
     </div>
-  </div>
-  <div class="compare-wrap" style="margin-bottom:18px;">
-    <div class="chart-wrap">
+ 
+ 
+    <div class="chart-wrap" style="margin-bottom:18px;">
       <div class="chart-label">Pips per tahun</div>
       <div class="chart-canvas-wrap"><canvas id="cYearPips" height="200"></canvas></div>
     </div>
-    <div class="chart-wrap">
+    <div class="chart-wrap" style="margin-bottom:18px;">
       <div class="chart-label">Drawdown pips per tahun (worst bulan dalam tahun)</div>
       <div class="chart-canvas-wrap"><canvas id="cYearDD" height="200"></canvas></div>
     </div>
-  </div>
+ 
   <div class="chart-wrap">
     <div class="chart-label">Pips kumulatif 2019–2026 (total: 54,598 pips)</div>
     <div class="chart-canvas-wrap"><canvas id="cCumPips" height="180"></canvas></div>
@@ -511,39 +511,39 @@ footer{border-top:2px solid var(--border);padding:28px 56px;max-width:1200px;mar
     <p class="section-sub">Fix Lot (kiri) · Risk 1% Fixed Fractional (kanan) · Modal awal $500</p>
   </div>
 
-  <div class="grid2" style="margin-bottom:18px;">
-    <div class="chart-wrap">
+
+    <div class="chart-wrap" style="margin-bottom:18px;">
       <div class="growth-header">
         <div class="legend-item"><div class="legend-dot" style="background:var(--blue);"></div>Ekuitas kumulatif Fix Lot</div>
         <span style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-left:auto;">Linear scale</span>
       </div>
       <div class="chart-canvas-wrap"><canvas id="cGrowFixM" height="220"></canvas></div>
     </div>
-    <div class="chart-wrap">
+    <div class="chart-wrap" style="margin-bottom:18px;">
       <div class="growth-header">
         <div class="legend-item"><div class="legend-dot" style="background:var(--gold);"></div>Ekuitas kumulatif Risk 1%</div>
         <span style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-left:auto;">Log scale</span>
       </div>
       <div class="chart-canvas-wrap"><canvas id="cGrowRiskM" height="220"></canvas></div>
     </div>
-  </div>
-  <div class="grid2" style="margin-bottom:18px;">
-    <div class="chart-wrap">
+
+
+    <div class="chart-wrap" style="margin-bottom:18px;">
       <div class="chart-label">Ekuitas tahunan — Fix Lot</div>
       <div class="chart-canvas-wrap"><canvas id="cGrowFixY" height="200"></canvas></div>
     </div>
-    <div class="chart-wrap">
+    <div class="chart-wrap" style="margin-bottom:18px;">
       <div class="chart-label">Ekuitas tahunan — Risk 1%</div>
       <div class="chart-canvas-wrap"><canvas id="cGrowRiskY" height="200"></canvas></div>
     </div>
-  </div>
+
 
   <!-- MONTHLY PIPS PER YEAR -->
   <div class="section-head" style="margin-top:16px;margin-bottom:20px;padding-top:20px;border-top:1px solid var(--border);">
     <h3 style="font-family:var(--serif);font-size:22px;font-weight:400;color:var(--navy);">Pips per Bulan per Tahun</h3>
     <p class="section-sub">Pips bulanan (biru) &amp; Drawdown pips (merah) — per tahun terpisah</p>
   </div>
-  <div class="grid2" style="margin-bottom:18px;" id="yearChartsGrid"></div>
+  <div class="chart-wrap" style="margin-bottom:18px;" id="yearChartsGrid"></div>
 </section>
 
 </section>
