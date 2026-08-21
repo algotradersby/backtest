@@ -218,6 +218,48 @@ footer{border-top:2px solid var(--border);padding:28px 56px;max-width:1200px;mar
 .bt-img-wrap:hover .bt-overlay{background:rgba(27,43,75,0.25);}
 .bt-zoom{font-family:var(--mono);font-size:13px;font-weight:500;color:#fff;opacity:0;background:rgba(27,43,75,0.85);padding:8px 20px;border-radius:6px;border:1px solid var(--gold);letter-spacing:.08em;transition:opacity .25s;}
 .bt-img-wrap:hover .bt-zoom{opacity:1;}
+
+/* --- CUSTOM SCROLLBAR & STICKY TABLE --- */
+.table-scroll {
+  overflow-x: auto;
+  overflow-y: auto; /* Mengaktifkan scroll vertikal di dalam tabel */
+  max-height: 75vh; /* Membatasi tinggi tabel agar scrollbar horizontal selalu terlihat di layar */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Memodifikasi desain scrollbar (Chrome, Safari, Edge) */
+.table-scroll::-webkit-scrollbar { width: 8px; height: 8px; display: block; }
+.table-scroll::-webkit-scrollbar-track { background: var(--bg3); border-radius: 4px; }
+.table-scroll::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
+.table-scroll::-webkit-scrollbar-thumb:hover { background: var(--gold2); }
+
+/* 1. Membuat Header (BULAN, TRADES, dll) tetap floating di atas saat scroll ke bawah */
+.table-scroll th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg3); /* Wajib diberi warna agar data di bawahnya tidak menembus */
+  box-shadow: 0 1px 0 var(--border); /* Pengganti border-bottom untuk sticky element */
+}
+
+/* 2. Membuat Kolom Pertama (BULAN) tetap floating di kiri saat scroll ke kanan */
+.table-scroll td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  background: var(--bg2); /* Wajib diberi warna solid */
+  border-right: 1px solid var(--bg3);
+}
+
+/* 3. Penyesuaian khusus untuk sudut kiri atas (Tulisan "BULAN") */
+.table-scroll th:first-child {
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 15; /* Harus paling tinggi agar menimpa baris dan kolom lain */
+  background: var(--bg3);
+  border-right: 1px solid var(--border);
+}
 </style>
 </head>
 <body>
@@ -385,7 +427,7 @@ footer{border-top:2px solid var(--border);padding:28px 56px;max-width:1200px;mar
   <!-- Full Monthly Stats Table -->
   <div style="margin-top:20px;" class="tbl-wrap">
     <div class="tbl-header">Statistik lengkap per bulan</div>
-    <div style="overflow-x:auto;"><table id="tblMonthly"></table></div>
+    <div class="table-scroll"><table id="tblMonthly"></table></div>
   </div>
 </section>
 
